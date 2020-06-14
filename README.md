@@ -16,7 +16,7 @@ Compile crt0.o which can be used for statically linked binary on MacOS:
 make
 ```
  
-Compile all files supported by this source
+Compile all files supported by this source (e.g. `crt1.o` which is used to load dynamically linked programs):
 
 ```
 make all
