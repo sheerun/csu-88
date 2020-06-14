@@ -21,3 +21,15 @@ Compile all files supported by this source
 ```
 make all
 ```
+
+## Can you use it for statically linking binary?
+
+Yes and no.
+
+Per documentation for `-static` linking flag:
+
+> This option will not work on Mac OS X unless all libraries (including libgcc.a) have also been compiled with -static. Since neither a static version of libSystem.dylib nor crt0.o are provided, this option is not useful to most people.
+
+It means that static version of `crt0.o` is not enough. There is no official version of libSystem on OS X other than libSystem.dylib which is dynamic library. And that means there is no static version of libSystem for crt0.o to link with, which causes the errors about missing functions.
+
+There is a source of libSystem available to [download](https://opensource.apple.com/tarballs/Libsystem/Libsystem-1281.tar.gz), but I do not know whether it's possible to statically compile it. If you even manage to do it, then you can use command like `ld main.o -static -L${PWD} -lcrt0.o -llibSystem.o -e _main -o main` to produce static binary for MacOS
