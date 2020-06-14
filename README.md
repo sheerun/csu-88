@@ -7,3 +7,17 @@ All next commits are created in order to compile it under MacOS Catalina.
 One can find some interestring information on previous csu-85 on this repository:
 
 https://github.com/skaht/Csu-85
+
+## Usage
+
+Compile crt0.o which can be used for statically linked binary on MacOS:
+
+```
+make
+```
+ 
+Compile all files supported by this source
+
+```
+make all
+```
