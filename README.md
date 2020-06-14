@@ -4,10 +4,6 @@ Source code of Csu (C startup). The first commit in this repository represents h
 
 All next commits are created in order to compile it under MacOS Catalina.
 
-One can find some interestring information on previous csu-85 on this repository:
-
-https://github.com/skaht/Csu-85
-
 ## Usage
 
 Compile crt0.o which can be used for statically linked binary on MacOS:
